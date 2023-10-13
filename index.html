@@ -56,9 +56,8 @@
 <style>
     body {
         background-image: url('bg.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-
+        /* background-repeat: no-repeat */
+        /* background-size:cover */
     }
 </style>
 
@@ -77,65 +76,84 @@
 
 
 
-
-<script src="problem_id.js"></script>
+<script src="prog_1.js"></script>
+<script src="prog_2.js"></script>
+<script src="data_strct.js"></script>
 
 <script>
     $(document).ready(function () {
-        // Initialize variables for links and accordions
+
+        const data = [
+            prog_1,
+            prog_2,
+            data_strct
+        ]
+
         var links = "";
         var accordions = "";
 
-        // Assuming Programming_2 is an object with university_lessons as an array of categories
-        $.each(Programming_2.university_lessons, function (index, category) {
-            var categoryHTML = '<div class="category p-4 col-lg-4">' +
-                '<h2 class="" style="color: #fff">' + category.name + '</h2>' +
-                '<ul class="topics">';
+        $.each(data, function (index, course) {
 
-            // Initialize links and accordions for each category
-            links = "";
-            accordions = "";
+            $.each(course.university_lessons, function (index, category) {
 
-            $.each(category.university_topics, function (i, topic) {
-                if (topic.practice_problems.length !== 0) {
 
-                    links = "";
-                    $.each(topic.practice_problems, function (i, problem) {
-                        links += '<li><a target="_blank" href="https://citu.codechum.com/student/study-area/' + problem.id + '">' + problem.name + '</a></li>';
-                    });
+                var categoryHTML = '<div class="category p-4 col-lg-4">' +
+                    '<h2 class="" style="color: #fff">' + category.name + '</h2>' +
+                    '<ul class="topics">';
 
-                    accordions += '<div class="accordion-item">' +
-                        '<h2 class="accordion-header">' +
-                        '<button class="accordion-button collapsed" ' +
-                        'type="button" ' +
-                        'data-bs-toggle="collapse" ' +
-                        'data-bs-target="#acc' + topic.id + '">' + topic.name +
-                        '</button>' +
-                        '</h2>' +
-                        '<div id="acc' + topic.id + '" ' +
-                        'class="accordion-collapse collapse" ' +
-                        `data-bs-parent="#accordion${category.id}">` +
-                        '<div class="accordion-body">' +
-                        '<ul class="practice-problems">' +
-                        links +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
-                }
+                links = "";
+                accordions = "";
+
+                $.each(category.university_topics, function (i, topic) {
+                    if (topic.practice_problems.length !== 0) {
+
+                        links = "";
+                        $.each(topic.practice_problems, function (i, problem) {
+                            links += '<li><a target="_blank" href="https://citu.codechum.com/student/study-area/' + problem.id + '">' + problem.name + '</a></li>';
+                        });
+
+                        accordions += '<div class="accordion-item">' +
+                            '<h2 class="accordion-header">' +
+                            '<button class="accordion-button collapsed" ' +
+                            'type="button" ' +
+                            'data-bs-toggle="collapse" ' +
+                            'data-bs-target="#acc' + topic.id + '">' + topic.name +
+                            '</button>' +
+                            '</h2>' +
+                            '<div id="acc' + topic.id + '" ' +
+                            'class="accordion-collapse collapse" ' +
+                            `data-bs-parent="#accordion${category.id}">` +
+                            '<div class="accordion-body">' +
+                            '<ul class="practice-problems">' +
+                            links +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                });
+
+                categoryHTML += `<div class="accordion" id="accordion${category.id}">` +
+                    accordions +
+                    '</div>';
+
+                categoryHTML += '</ul></div>';
+
+                $('#content').append(categoryHTML);
             });
-
-            categoryHTML += `<div class="accordion" id="accordion${category.id}">` +
-                accordions +
-                '</div>';
-
-            categoryHTML += '</ul></div>';
-
-            // Append the category HTML to the content div
-            $('#content').append(categoryHTML);
         });
     });
 </script>
 
+<!-- Google tag (gtag.js) -->
+<script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-0XZTG255FL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0XZTG255FL');
+</script>
 
 </html>
