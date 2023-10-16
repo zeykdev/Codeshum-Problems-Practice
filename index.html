@@ -55,17 +55,16 @@
 </head>
 <style>
     body {
-        background-image: url('bg.jpg');
-        /* background-repeat: no-repeat */
-        /* background-size:cover */
+        background: url('bg.jpg') no-repeat center/cover;
     }
 </style>
 
 
 <body>
-    <h1 class="text-center p-4 fw-bolder">RAPH GWAPITO CODECHUM QUICKIE LINKS</h1>
-    <p class="text-center">login to your codechum before opening the links !</p>
+
     <div class="container pt-3">
+        <h1 class="text-center" style="color: #fff; text-shadow: 0 0 4px #ea17bf;">RAPH GWAPITO CODECHUM QUICKIE LINKS</h1>
+        <p class="text-center fw-bolder">login to your codechum before opening the links !</p>
         <div class="row"
             id="content"></div>
     </div>
@@ -96,11 +95,6 @@
         $.each(data, function (index, course) {
 
             $.each(course.university_lessons, function (index, category) {
-
-
-                var categoryHTML = '<div class="category p-4 col-lg-4">' +
-                    '<h2 class="" style="color: #fff">' + category.name + '</h2>' +
-                    '<ul class="topics">';
 
                 links = "";
                 accordions = "";
@@ -134,11 +128,16 @@
                     }
                 });
 
-                categoryHTML += `<div class="accordion" id="accordion${category.id}">` +
-                    accordions +
-                    '</div>';
-
-                categoryHTML += '</ul></div>';
+                var categoryHTML = `<div class=" col-lg-4">
+                                        <div class="card-body">
+                                            <h2 class="card-title" style="color: #fff; text-shadow: 0 0 4px #00FF9C;">${category.name}</h5>
+                                            <p class="card-text">
+                                                <div class="accordion" id="accordion${category.id}">
+                                                    ${accordions}
+                                                </div>
+                                            </p>
+                                        </div>
+                                    </div>`
 
                 $('#content').append(categoryHTML);
             });
