@@ -35,7 +35,11 @@
         content="bg.jpg" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-
+    <audio loop
+        autoplay>
+        <source src="/papuri-sa-diyos-remix.mp3"
+            type="audio/filetype">
+    </audio>
 
     <link rel="icon"
         href="raph.ico"
@@ -125,9 +129,9 @@
             style="color: #fff; text-shadow: 0 0 4px #ea17bf;">RAPH GWAPITO CODECHUM QUICKIE LINKS</h1>
         <p class="text-center fw-bolder">login to your codechum before opening the links !</p>
         <h1 id="verse"
-            class="rainbow">TEST</h1>
-        <h6 id="ref"
-            class="rainbow">123123123</h6>
+            class="rainbow"></h1>
+        <h3 id="ref"
+            class="rainbow"></h3>
         <div class="row"
             id="content"></div>
     </div>
@@ -210,9 +214,15 @@
 
 
     function getBibleVerse() {
-        $.get("https://bible-api.com/?random=verse", function (data) {
-            $("#verse").text(data.text);
-            $("#ref").text(data.reference);
+        $.ajax({
+            url: "https://bible-api.com/?random=verse",
+
+            dataType: "jsonp",
+            success: function (data) {
+                $("#verse").text('"' + data.text + '"');
+                $("#ref").text(data.reference);
+            }
+
         });
     }
 
