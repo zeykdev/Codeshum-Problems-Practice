@@ -57,14 +57,77 @@
     body {
         background: url('bg.jpg') no-repeat center/cover;
     }
+
+    .rainbow {
+        animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
+        text-shadow: 0 0 4px #ea17bf;
+    }
+
+    @keyframes rainbow {
+
+        100%,
+        0% {
+            color: rgb(255, 0, 0);
+        }
+
+        8% {
+            color: rgb(255, 127, 0);
+        }
+
+        16% {
+            color: rgb(255, 255, 0);
+        }
+
+        25% {
+            color: rgb(127, 255, 0);
+        }
+
+        33% {
+            color: rgb(0, 255, 0);
+        }
+
+        41% {
+            color: rgb(0, 255, 127);
+        }
+
+        50% {
+            color: rgb(0, 255, 255);
+        }
+
+        58% {
+            color: rgb(0, 127, 255);
+        }
+
+        66% {
+            color: rgb(0, 0, 255);
+        }
+
+        75% {
+            color: rgb(127, 0, 255);
+        }
+
+        83% {
+            color: rgb(255, 0, 255);
+        }
+
+        91% {
+            color: rgb(255, 0, 127);
+        }
+    }
 </style>
 
 
 <body>
 
-    <div class="container pt-3">
-        <h1 class="text-center" style="color: #fff; text-shadow: 0 0 4px #ea17bf;">RAPH GWAPITO CODECHUM QUICKIE LINKS</h1>
+    <div class="container pt-3 text-center">
+        <h1 class="text-center"
+            style="color: #fff; text-shadow: 0 0 4px #ea17bf;">RAPH GWAPITO CODECHUM QUICKIE LINKS</h1>
         <p class="text-center fw-bolder">login to your codechum before opening the links !</p>
+        <h1 id="verse"
+            class="rainbow">TEST</h1>
+        <h6 id="ref"
+            class="rainbow">123123123</h6>
         <div class="row"
             id="content"></div>
     </div>
@@ -142,7 +205,18 @@
                 $('#content').append(categoryHTML);
             });
         });
+        getBibleVerse();
     });
+
+
+    function getBibleVerse() {
+        $.get("https://bible-api.com/?random=verse", function (data) {
+            $("#verse").text(data.text);
+            $("#ref").text(data.reference);
+        });
+    }
+
+
 </script>
 
 <!-- Google tag (gtag.js) -->
