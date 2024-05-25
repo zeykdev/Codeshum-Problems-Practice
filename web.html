@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-    <title>CodeShum Quickie - C Language</title>
+    <title>CodeShum Quickie - HTML, CSS, JS Language</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
         rel="stylesheet"
         type="text/css" />
@@ -90,10 +90,10 @@
                     id="hero">
                     <div class="hero-overlay bg-opacity-50"></div>
                     <div class="hero-content flex-col lg:flex-row-reverse">
-                        <img src="assets\img\c.png"
-                            class="w-[300px] rounded-lg shadow-1xl " />
+                        <img src="assets\img\web.png"
+                            class="w-[300px] rounded-lg shadow-1xl" />
                         <div>
-                            <h1 class="text-5xl font-bold">C Language Practice Problems</h1>
+                            <h1 class="text-5xl font-bold">HTML, CSS, JS Language Practice Problems</h1>
                         </div>
                     </div>
                 </div>
@@ -113,10 +113,12 @@
                             </svg>
                             <span>You need to be logged in to Codechum for the redirections to work properly.
                                 <br>
-                                <span class="text-warning">Note: You need to select the Language C on the TOP RIGHT
+                                <span class="text-warning">Note: You need to select the Language HTML,CSS,JS on the
+                                    TOP RIGHT
                                     corner of the
                                     CodeChum Editor.</span>
                             </span>
+
                         </div>
                     </div>
 
@@ -161,7 +163,7 @@
         </div>
     </div>
 
-    <footer class="footer footer-center  bg-base-200  p-10 mt-4">
+    <footer class="footer footer-center  bg-base-200 p-10 mt-4">
         <aside>
             <p class="font-bold">
                 © 2024 CodeShum Quickie
@@ -178,18 +180,12 @@
         </aside>
     </footer>
 
-    <script src="./assets/data/c/prog_1.js"></script>
-    <script src="./assets/data/c/prog_2.js"></script>
-    <script src="./assets/data/c/data_strct.js"></script>
-    <script src="./assets/data/c/csit122.js"></script>
+    <script src="./assets/data/web/basic.js"></script>
     <script src="script.js"></script>
     <script>
         $(document).ready(function () {
             const cleanData = cleanCourseData([
-                prog_1,
-                prog_2,
-                data_strct,
-                csit122
+                basic,
             ]);
             renderContent(cleanData);
             $('#searchInput').on('input', function () {
