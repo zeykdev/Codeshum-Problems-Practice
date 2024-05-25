@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>CodeShum Quickie - Python Language</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+        rel="stylesheet"
+        type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <meta name="title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta name="description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+
+    <meta property="og:type"
+        content="website" />
+    <meta property="og:url"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/" />
+    <meta property="og:title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta property="og:description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+    <meta property="og:image"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/assets/img/meta.png" />
+
+    <meta property="twitter:card"
+        content="summary_large_image" />
+    <meta property="twitter:url"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/" />
+    <meta property="twitter:title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta property="twitter:description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+    <meta property="twitter:image"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/assets/img/meta.png" />
+</head>
+
+<body class="bg-gray-00 text-white">
+
+    <div class="drawer">
+        <input id="my-drawer-3"
+            type="checkbox"
+            class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+            <div class="w-full navbar bg-base-300">
+                <div class="flex-none lg:hidden">
+                    <label for="my-drawer-3"
+                        aria-label="open sidebar"
+                        class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            class="inline-block w-6 h-6 stroke-current">
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+                <div class="flex-1 px-2 mx-2"><a href="index.html"
+                        class="btn btn-ghost text-xl">Code Shum Quickie</a></div>
+                <div class="flex-none hidden lg:block">
+                    <ul class="menu menu-horizontal">
+                        <li><a href="c.html"
+                                class="btn btn-ghost text-white">C</a></li>
+                        <li><a href="cpp.html"
+                                class="btn btn-ghost text-white">C++</a></li>
+                        <li><a href="csharp.html"
+                                class="btn btn-ghost text-white">C#</a></li>
+                        <li><a href="java.html"
+                                class="btn btn-ghost text-white">Java</a></li>
+                        <li><a href="python.html"
+                                class="btn btn-ghost text-white">Python</a></li>
+                        <li><a href="web.html"
+                                class="btn btn-ghost text-white">WEB</a></li>
+                        <li><a href="sql.html"
+                                class="btn btn-ghost text-white">MySQL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="hero bg-base-200 mb-4"
+                    style="background-image: url(assets/img/bg.gif);"
+                    id="hero">
+                    <div class="hero-overlay bg-opacity-50"></div>
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <img src="assets\img\python.png"
+                            class="max-w-sm rounded-lg shadow-1xl" />
+                        <div>
+                            <h1 class="text-5xl font-bold">Python Language Practice Problems</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mx-auto text-center">
+                    <div class="mx-4">
+                        <div role="alert"
+                            class="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                class="stroke-current shrink-0 w-6 h-6">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>You need to be logged in to Codechum for the redirections to work properly.
+                                <br>
+                                <span class="text-warning">Note: You need to select the Language Python on the TOP RIGHT
+                                    corner of the
+                                    CodeChum Editor.</span>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="search-bar m-4">
+                        <input type="text"
+                            id="searchInput"
+                            placeholder="Search topics..."
+                            class="input input-bordered w-full" />
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 mx-4 gap-4"
+                        id="content">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="drawer-side">
+            <label for="my-drawer-3"
+                aria-label="close sidebar"
+                class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200">
+                <li><a href="index.html"
+                        class="btn btn-ghost text-white text-xl">Code Shum Quickie</a></li>
+                <div class="divider">
+                    Language
+                </div>
+                <li><a href="c.html"
+                        class="btn btn-ghost text-white">C</a></li>
+                <li><a href="cpp.html"
+                        class="btn btn-ghost text-white">C++</a></li>
+                <li><a href="csharp.html"
+                        class="btn btn-ghost text-white">C#</a></li>
+                <li><a href="java.html"
+                        class="btn btn-ghost text-white">Java</a></li>
+                <li><a href="python.html"
+                        class="btn btn-ghost text-white">Python</a></li>
+                <li><a href="web.html"
+                        class="btn btn-ghost text-white">WEB</a></li>
+                <li><a href="sql.html"
+                        class="btn btn-ghost text-white">MySQL</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer footer-center  bg-base-200 p-10 mt-4">
+        <aside>
+            <p class="font-bold">
+                © 2024 CodeShum Quickie
+            </p>
+            <p class="text-neutral-content">Data Disclaimer: The information herein is gathered from publicly
+                available
+                data on
+                codechum.com and is
+                not hosted on
+                this website. Accuracy cannot be guaranteed. Use at your own discretion. We hold no liability for its
+                use.</p>
+            <a class="text-primary w-bold"
+                href="https://github.com/Kintoyyy/CodeShum-Quickie-Problems">Kintoyyy/CodeShum-Quickie-Problems</a>
+        </aside>
+    </footer>
+
+    <script src="./assets/data/python/prog_1.js"></script>
+    <script src="./assets/data/python/prog_2.js"></script>
+    <script src="./assets/data/python/data_strct.js"></script>
+    <script src="./assets/data/python/oop.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            const cleanData = cleanCourseData([
+                prog_1,
+                prog_2,
+                data_strct,
+                oop
+            ]);
+            renderContent(cleanData);
+            $('#searchInput').on('input', function () {
+                const query = $(this).val().toLowerCase();
+                const filteredData = filterCourseData(cleanData, query);
+                renderContent(filteredData);
+            });
+
+            $(document).on('click', '.suggestion-item', function () {
+                const suggestion = $(this).text();
+                $('#searchInput').val(suggestion);
+                const filteredData = filterCourseData(cleanData, suggestion, true);
+                renderContent(filteredData);
+            });
+        });
+
+    </script>
+</body>
+
+<script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-0XZTG255FL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0XZTG255FL');
+</script>
+
+</html>
