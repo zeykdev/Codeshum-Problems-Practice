@@ -6,15 +6,14 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
     <title>CodeShum Quickie Links</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+        rel="stylesheet"
+        type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="bg-gray-900 text-white">
-
+<body class="bg-gray-00 text-white">
     <header class="bg-gray-800 p-3">
         <div class="container mx-auto flex flex-wrap items-center justify-center lg:justify-between">
             <div class="flex-1">
@@ -45,22 +44,41 @@
             <img src="assets\img\c.png"
                 class="max-w-sm rounded-lg shadow-1xl" />
             <div>
-                <h1 class="text-5xl font-bold">CodeShum C Language Problems</h1>
+                <h1 class="text-5xl font-bold">C Language Practice Problems</h1>
             </div>
         </div>
     </div>
 
     <div class="container mx-auto text-center">
-        <div class="grid grid-cols-1 "
-            id="content"></div>
-        <div class="join grid grid-cols-2">
-            <a href="index.html"
-                class="join-item btn btn-outline me-2">Home Page</a>
-            <a href="cpp.html"
-                class="join-item btn btn-outline">C++</a>
+        <div class="mx-4">
+            <div role="alert"
+                class="alert">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="stroke-current shrink-0 w-6 h-6">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>You need to be logged in to Codechum for the redirections to work properly.</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2"
+            id="content">
+        </div>
+
+        <div class="m-4">
+            <div class="join grid grid-cols-2">
+                <a href="index.html"
+                    class="join-item btn btn-outline me-2">Home Page</a>
+                <a href="cpp.html"
+                    class="join-item btn btn-outline">C++</a>
+            </div>
         </div>
     </div>
-
 
     <footer class="py-3 my-4 text-center text-gray-400">
         <p>© 2024 CodeShum Quickie</p>
@@ -72,6 +90,7 @@
     <script src="./assets/data/c/csit122.js"></script>
     <script>
         $(document).ready(function () {
+
             const data = [
                 prog_1,
                 prog_2,
@@ -93,7 +112,6 @@
                         return false;
                     });
 
-                    // Sort the filtered topics alphabetically by name
                     filteredTopics.sort((a, b) => a.name.localeCompare(b.name));
 
                     return {
@@ -108,13 +126,12 @@
                 };
             });
 
-            console.log(cleanData);
-
             let contentHTML = "";
 
             $.each(cleanData, function (index, course) {
                 $.each(course.university_lessons, function (index, category) {
                     let accordions = "";
+
 
                     $.each(category.university_topics, function (i, topic) {
                         if (topic.practice_problems.length !== 0) {
@@ -122,9 +139,9 @@
                                 return `<a class="btn m-1 btn-outline" target="_blank" href="https://citu.codechum.com/student/study-area/${problem.id}">${problem.name}</a>`;
                             }).join("");
 
-                            accordions += `<div class="collapse collapse-arrow rounded-box">
+                            accordions += `<div class="collapse collapse-arrow rounded-box bg-base-100">
                                 <input type="checkbox" id="acc${topic.id}">
-                                <div class="collapse-title text-xl font-medium" >${topic.name}</div>
+                                <div class="collapse-title text-xl font-medium">${topic.name} <span class="badge badge-ghost">${topic.practice_problems.length} Items</span></div>
                                 <div class="collapse-content">
                                     <ul class="list-disc ml-5">
                                         ${links}
@@ -134,15 +151,17 @@
                         }
                     });
 
-                    if (accordions) {  // Only add category if there are accordions
-                        contentHTML += `<div class="card bg-gray-700 text-neutral-content mb-4">
-                            <div class="card-body items-center ">
-                                <h1 class=" text-primary text-4xl font-bold mb-4">${category.name}</h1>
-                                <div class="">
-                                    ${accordions}
+                    if (accordions) {
+                        contentHTML += `
+                        <div class="card bg-base-200 shadow-xl m-4">
+                            <div class="card-body">
+                                <div class="divider text-4xl">
+                                    ${category.name}
                                 </div>
+                                ${accordions}
                             </div>
-                        </div><div class="divider"></div> `;
+                        </div>
+                        `;
                     }
                 });
             });
