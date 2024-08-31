@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>CodeShum Quickie - C Language</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+        rel="stylesheet"
+        type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <meta name="title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta name="description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+
+    <meta property="og:type"
+        content="website" />
+    <meta property="og:url"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/" />
+    <meta property="og:title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta property="og:description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+    <meta property="og:image"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/assets/img/meta.png" />
+
+    <meta property="twitter:card"
+        content="summary_large_image" />
+    <meta property="twitter:url"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/" />
+    <meta property="twitter:title"
+        content="CodeShum Quickie Practice Problems" />
+    <meta property="twitter:description"
+        content="CodeShum Quickie is a directory of practice problems from CodeChum. Access publicly available problems directly. We do not host any content on our site." />
+    <meta property="twitter:image"
+        content="https://kintoyyy.github.io/CodeShum-Quickie-Problems/assets/img/meta.png" />
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            border: 1px solid #262626;
+            text-align: center;
+            background-color: #000000;
+            /* Default color */
+        }
+
+        .color-select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+
+        .color-picker-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin: 2px;
+        }
+
+        .selected-color {
+            border: 2px solid #000;
+        }
+
+        .color-display {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #383838;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin: 20px auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow: auto;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .color-picker-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .selected-color-cell {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-00 text-white">
+
+    <div class="drawer">
+        <input id="my-drawer-3"
+            type="checkbox"
+            class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+            <div class="w-full navbar bg-base-300">
+                <div class="flex-none lg:hidden">
+                    <label for="my-drawer-3"
+                        aria-label="open sidebar"
+                        class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            class="inline-block w-6 h-6 stroke-current">
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+                <div class="flex-1 px-2 mx-2"><a href="index.html"
+                        class="btn btn-ghost text-xl">Code Shum Quickie</a></div>
+                <div class="flex-none hidden lg:block">
+                    <ul class="menu menu-horizontal">
+                        <li><a href="c.html"
+                                class="btn btn-ghost text-white">C</a></li>
+                        <li><a href="cpp.html"
+                                class="btn btn-ghost text-white">C++</a></li>
+                        <li><a href="csharp.html"
+                                class="btn btn-ghost text-white">C#</a></li>
+                        <li><a href="java.html"
+                                class="btn btn-ghost text-white">Java</a></li>
+                        <li><a href="python.html"
+                                class="btn btn-ghost text-white">Python</a></li>
+                        <li><a href="web.html"
+                                class="btn btn-ghost text-white">WEB</a></li>
+                        <li><a href="sql.html"
+                                class="btn btn-ghost text-white">MySQL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="hero bg-base-200 mb-4"
+                    style="background-image: url(assets/img/bg.gif);"
+                    id="hero">
+                    <div class="hero-overlay bg-opacity-50"></div>
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <img src="assets\img\asm.png"
+                            class="w-[300px] rounded-lg shadow-1xl " />
+                        <div>
+                            <h1 class="text-5xl font-bold">TASM Art generator</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mx-auto text-center">
+                    <table id="colorPickerTable"></table>
+                    <div class="color-picker-container">
+                        <!-- <label for="colorPicker">Select Color: </label> -->
+                        <select id="colorPicker"
+                            hidden></select>
+                    </div>
+                    <div class="color-picker-container">
+                        <div class="color-display"
+                            id="colorDisplay">#000000</div>
+                        <div class="color-palette"
+                            id="colorPalette">
+                            <!-- Color swatches will be added here -->
+                        </div>
+                    </div>
+                    <button class="btn btn-success"
+                        id="generateCode">Generate Assembly Code</button>
+                    <button class="btn btn-error "
+                        id="clearTable">Clear</button>
+                    <button class="btn btn-primary"
+                        id="copyCode">Copy Code</button>
+                    <button id="blinkCell"
+                        hidden>Blink Cell</button>
+                    <textarea id="output"
+                        readonly></textarea>
+
+                </div>
+            </div>
+        </div>
+        <div class="drawer-side">
+            <label for="my-drawer-3"
+                aria-label="close sidebar"
+                class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200">
+                <li><a href="index.html"
+                        class="btn btn-ghost text-white text-xl">Code Shum Quickie</a></li>
+                <div class="divider">
+                    Language
+                </div>
+                <li><a href="c.html"
+                        class="btn btn-ghost text-white">C</a></li>
+                <li><a href="cpp.html"
+                        class="btn btn-ghost text-white">C++</a></li>
+                <li><a href="csharp.html"
+                        class="btn btn-ghost text-white">C#</a></li>
+                <li><a href="java.html"
+                        class="btn btn-ghost text-white">Java</a></li>
+                <li><a href="python.html"
+                        class="btn btn-ghost text-white">Python</a></li>
+                <li><a href="web.html"
+                        class="btn btn-ghost text-white">WEB</a></li>
+                <li><a href="sql.html"
+                        class="btn btn-ghost text-white">MySQL</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer footer-center  bg-base-200  p-10 mt-4">
+        <aside>
+            <p class="font-bold">
+                © 2024 CodeShum Quickie
+            </p>
+            <a class="text-primary w-bold"
+                href="https://github.com/Kintoyyy/CodeShum-Quickie-Problems">Kintoyyy/CodeShum-Quickie-Problems</a>
+        </aside>
+    </footer>
+    <script>
+        const _0x140170 = _0x5055; function _0x5055(_0x1e1087, _0x4a6959) { const _0x546ed5 = _0x2f3e(); return _0x5055 = function (_0x8c57a8, _0x120042) { _0x8c57a8 = _0x8c57a8 - 0x1ed; let _0x3e1133 = _0x546ed5[_0x8c57a8]; return _0x3e1133; }, _0x5055(_0x1e1087, _0x4a6959); } (function (_0xad0724, _0x4538e7) { const _0x2d2c53 = _0x5055, _0x4567f7 = _0xad0724(); while (!![]) { try { const _0x51db27 = parseInt(_0x2d2c53(0x20a)) / 0x1 * (parseInt(_0x2d2c53(0x22c)) / 0x2) + parseInt(_0x2d2c53(0x223)) / 0x3 * (parseInt(_0x2d2c53(0x239)) / 0x4) + parseInt(_0x2d2c53(0x1ff)) / 0x5 * (-parseInt(_0x2d2c53(0x1f4)) / 0x6) + -parseInt(_0x2d2c53(0x1fc)) / 0x7 + -parseInt(_0x2d2c53(0x214)) / 0x8 + parseInt(_0x2d2c53(0x1fe)) / 0x9 * (parseInt(_0x2d2c53(0x218)) / 0xa) + parseInt(_0x2d2c53(0x1f8)) / 0xb * (-parseInt(_0x2d2c53(0x206)) / 0xc); if (_0x51db27 === _0x4538e7) break; else _0x4567f7['push'](_0x4567f7['shift']()); } catch (_0x5d3db5) { _0x4567f7['push'](_0x4567f7['shift']()); } } }(_0x2f3e, 0x76f54)); const table = document['getElementById'](_0x140170(0x1f2)), output = document['getElementById'](_0x140170(0x1f6)), colorPicker = document[_0x140170(0x243)]('colorPicker'); let isDrawing = ![], currentColor = '#000000'; const colorPalette = document[_0x140170(0x243)]('colorPalette'), colorDisplay = document[_0x140170(0x243)](_0x140170(0x224)), biosColors = { '#000000': '0', '#0000FF': '1', '#00FF00': '2', '#00FFFF': '3', '#FF0000': '4', '#FF00FF': '5', '#FFFF00': '6', '#FFFFFF': '7' }; function _0x2f3e() { const _0x369ab4 = ['value', 'color-swatch', 'trace', '643MmsTgp', 'info', 'textContent', 'setItem', 'clearTable', 'target', '\x0a\x09mov\x20ah,02h\x0a\x09mov\x20cl,0Ah\x0a\x09mov\x20dl,cl\x0a\x09int\x2021h\x0a', 'warn', 'error', 'getElementsByTagName', '3988496PnwMEi', 'toString', 'remove', 'return\x20(function()\x20', '390430XJEGqT', 'appendChild', 'slice', 'selected-color', 'mousedown', 'querySelectorAll', '[data-color=\x22', '{}.constructor(\x22return\x20this\x22)(\x20)', 'footer', 'parse', 'prototype', '30FCBmFP', 'colorDisplay', 'add', 'style', 'constructor', 'innerHTML', 'copyCode', 'cells', 'classList', '2792yWhWxF', '\x09mov\x20ah,09h\x0a\x09mov\x20bl,', 'color', 'keys', 'stringify', 'select', 'execCommand', 'change', '__proto__', 'exception', 'exec', 'rows', '.selected-color-cell', '360004BTiEEq', 'blinkCell', 'backgroundColor', 'body', 'removeItem', '(((.+)+)+)+$', 'apply', '#000000', '#FFFFFF', 'addEventListener', 'getElementById', 'tableState', 'createElement', '.color-swatch', 'map', '.model\x20small\x0a.code\x0a.stack\x20100h\x0a\x09start:\x0a\x0a', 'div', 'colorPickerTable', 'getItem', '7428pEQqyJ', 'querySelector', 'output', '\x09;\x20', '143qvmJwN', '\x09mov\x20ah,02h\x0a\x09mov\x20cl,20h\x0a\x09mov\x20dl,cl\x0a\x09int\x2021h\x0a\x0a', 'from', 'click', '4236792sLqcfX', 'table', '171pEyIhx', '470XXHZQE', 'DOMContentLoaded', 'forEach', 'console', 'selected-color-cell', '\x0a\x09int\x2027h\x0a\x0aend\x20start', 'search', '768012YTtqqB']; _0x2f3e = function () { return _0x369ab4; }; return _0x2f3e(); } function rgbToHex(_0x10642c) { const _0x1abb7f = _0x140170; if (!_0x10642c) return _0x1abb7f(0x240); const _0x5a00d3 = /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+\s*)?\)$/[_0x1abb7f(0x236)](_0x10642c); if (!_0x5a00d3) return '#000000'; return '#' + ((0x1 << 0x18) + (parseInt(_0x5a00d3[0x1]) << 0x10) + (parseInt(_0x5a00d3[0x2]) << 0x8) + parseInt(_0x5a00d3[0x3]))['toString'](0x10)[_0x1abb7f(0x21a)](0x1)['toUpperCase'](); } Object[_0x140170(0x22f)](biosColors)[_0x140170(0x201)](_0x16c919 => { const _0x346fc6 = _0x140170, _0x3a2dd6 = document[_0x346fc6(0x1ed)]('option'); _0x3a2dd6[_0x346fc6(0x207)] = _0x16c919, _0x3a2dd6[_0x346fc6(0x226)]['backgroundColor'] = _0x16c919, _0x3a2dd6[_0x346fc6(0x20c)] = biosColors[_0x16c919], colorPicker['appendChild'](_0x3a2dd6); const _0x4693e0 = document['createElement'](_0x346fc6(0x1f1)); _0x4693e0['classList'][_0x346fc6(0x225)](_0x346fc6(0x208)), _0x4693e0[_0x346fc6(0x226)][_0x346fc6(0x23b)] = _0x16c919, _0x4693e0['dataset'][_0x346fc6(0x22e)] = _0x16c919, _0x4693e0['addEventListener'](_0x346fc6(0x1fb), () => { selectColor(_0x16c919); }), colorPalette[_0x346fc6(0x219)](_0x4693e0); }); function selectColor(_0xda05e9) { const _0x59775a = _0x140170; currentColor = _0xda05e9, colorDisplay[_0x59775a(0x226)][_0x59775a(0x23b)] = _0xda05e9, colorDisplay[_0x59775a(0x20c)] = _0xda05e9, document[_0x59775a(0x21d)](_0x59775a(0x1ee))[_0x59775a(0x201)](_0x24b7be => { const _0x490140 = _0x59775a; _0x24b7be[_0x490140(0x22b)]['remove'](_0x490140(0x21b)); }), document[_0x59775a(0x1f5)](_0x59775a(0x21e) + _0xda05e9 + '\x22]')[_0x59775a(0x22b)][_0x59775a(0x225)](_0x59775a(0x21b)); } function loadTableState() { const _0x168377 = _0x140170, _0x14979c = JSON[_0x168377(0x221)](localStorage[_0x168377(0x1f3)]('tableState')); _0x14979c && _0x14979c[_0x168377(0x201)]((_0xb56603, _0x1ed176) => { _0xb56603['forEach']((_0x156770, _0xedd214) => { const _0x1935f7 = _0x5055, _0x2c73cf = table[_0x1935f7(0x237)][_0x1ed176][_0x1935f7(0x22a)][_0xedd214]; _0x2c73cf[_0x1935f7(0x226)][_0x1935f7(0x23b)] = _0x156770; }); }); } function saveTableState() { const _0xc6f6c = _0x140170, _0x2b6df4 = Array[_0xc6f6c(0x1fa)](table['rows'])['map'](_0x3948aa => Array[_0xc6f6c(0x1fa)](_0x3948aa['cells'])[_0xc6f6c(0x1ef)](_0x34b4fa => _0x34b4fa['style']['backgroundColor'])); localStorage[_0xc6f6c(0x20d)]('tableState', JSON[_0xc6f6c(0x230)](_0x2b6df4)); } function createTable() { const _0x197b57 = _0x140170, _0x555629 = (function () { let _0x57215f = !![]; return function (_0x312831, _0x532dd2) { const _0x35105c = _0x57215f ? function () { const _0x5a75bf = _0x5055; if (_0x532dd2) { const _0x3af057 = _0x532dd2[_0x5a75bf(0x23f)](_0x312831, arguments); return _0x532dd2 = null, _0x3af057; } } : function () { }; return _0x57215f = ![], _0x35105c; }; }()), _0x33545b = _0x555629(this, function () { const _0x5cf34b = _0x5055; return _0x33545b[_0x5cf34b(0x215)]()[_0x5cf34b(0x205)](_0x5cf34b(0x23e))['toString']()[_0x5cf34b(0x227)](_0x33545b)[_0x5cf34b(0x205)](_0x5cf34b(0x23e)); }); _0x33545b(); const _0x2b3c15 = (function () { let _0x49a9ae = !![]; return function (_0x4b18ec, _0x404825) { const _0x3d2eb0 = _0x49a9ae ? function () { if (_0x404825) { const _0x5e78ef = _0x404825['apply'](_0x4b18ec, arguments); return _0x404825 = null, _0x5e78ef; } } : function () { }; return _0x49a9ae = ![], _0x3d2eb0; }; }()), _0x376506 = _0x2b3c15(this, function () { const _0x4eeac5 = _0x5055, _0x25e5cd = function () { const _0xc577fe = _0x5055; let _0x58c458; try { _0x58c458 = Function(_0xc577fe(0x217) + _0xc577fe(0x21f) + ');')(); } catch (_0xdbb237) { _0x58c458 = window; } return _0x58c458; }, _0x49e3a4 = _0x25e5cd(), _0x4b052a = _0x49e3a4[_0x4eeac5(0x202)] = _0x49e3a4[_0x4eeac5(0x202)] || {}, _0x3e328e = ['log', _0x4eeac5(0x211), _0x4eeac5(0x20b), _0x4eeac5(0x212), _0x4eeac5(0x235), _0x4eeac5(0x1fd), _0x4eeac5(0x209)]; for (let _0x23922f = 0x0; _0x23922f < _0x3e328e['length']; _0x23922f++) { const _0x37aeaf = _0x2b3c15[_0x4eeac5(0x227)][_0x4eeac5(0x222)]['bind'](_0x2b3c15), _0x137fd6 = _0x3e328e[_0x23922f], _0x486c42 = _0x4b052a[_0x137fd6] || _0x37aeaf; _0x37aeaf[_0x4eeac5(0x234)] = _0x2b3c15['bind'](_0x2b3c15), _0x37aeaf['toString'] = _0x486c42['toString']['bind'](_0x486c42), _0x4b052a[_0x137fd6] = _0x37aeaf; } }); _0x376506(); for (let _0x4eb460 = 0x0; _0x4eb460 < 0x10; _0x4eb460++) { const _0xa41226 = document[_0x197b57(0x1ed)]('tr'); for (let _0x5814a0 = 0x0; _0x5814a0 < 0x10; _0x5814a0++) { const _0x181081 = document['createElement']('td'); _0x181081['addEventListener'](_0x197b57(0x21c), () => { const _0x495bf8 = _0x197b57; isDrawing = !![], _0x181081[_0x495bf8(0x226)]['backgroundColor'] = currentColor, saveTableState(); }), _0x181081[_0x197b57(0x242)]('mouseup', () => { isDrawing = ![]; }), _0x181081[_0x197b57(0x242)]('mouseover', () => { const _0x983de1 = _0x197b57; isDrawing && (_0x181081['style'][_0x983de1(0x23b)] = currentColor, saveTableState()); }), _0xa41226[_0x197b57(0x219)](_0x181081); } table[_0x197b57(0x219)](_0xa41226); } loadTableState(); } document[_0x140170(0x242)](_0x140170(0x200), function () { const _0x439714 = _0x140170; var _0x41bd3c = document[_0x439714(0x1ed)](_0x439714(0x220)), _0x3574e4 = document[_0x439714(0x1ed)]('p'); _0x3574e4[_0x439714(0x228)] = '<a\x20href=\x22https://www.facebook.com/kint.oyyy\x22\x20target=\x22_blank\x22>Made\x20by\x20Kintoyyy</a>\x20:\x20)', _0x41bd3c[_0x439714(0x219)](_0x3574e4), document[_0x439714(0x213)](_0x439714(0x23c))[0x0][_0x439714(0x219)](_0x41bd3c); }); function generateAssemblyCode() { const _0x66f4ec = _0x140170; let _0x1ebdd4 = _0x66f4ec(0x1f0); const _0x9771aa = table['querySelectorAll']('tr'); _0x9771aa[_0x66f4ec(0x201)]((_0x42f0c4, _0x4db219) => { const _0x34bbe8 = _0x66f4ec, _0x411620 = _0x42f0c4[_0x34bbe8(0x21d)]('td'), _0x13eb9c = Array['from'](_0x411620)[_0x34bbe8(0x1ef)](_0x5623a1 => { const _0x4b562b = _0x34bbe8, _0x7fabf0 = rgbToHex(_0x5623a1['style'][_0x4b562b(0x23b)]); return biosColors[_0x7fabf0] || '0'; }); _0x1ebdd4 += _0x34bbe8(0x1f7) + (_0x4db219 + 0x1) + '\x20row\x20colors\x0a', _0x13eb9c['forEach']((_0x3dff66, _0x12b122) => { const _0x1615c2 = _0x34bbe8; _0x1ebdd4 += _0x1615c2(0x22d) + _0x3dff66 + _0x3dff66 + 'h\x0a\x09mov\x20cx,1\x0a\x09int\x2010h\x0a\x0a', _0x1ebdd4 += _0x1615c2(0x1f9), _0x12b122 == 0xf && (_0x1ebdd4 += _0x1615c2(0x1f9)), _0x12b122 == 0xf && (_0x1ebdd4 += _0x1615c2(0x210)); }), _0x1ebdd4 += '\x0a'; }), _0x1ebdd4 += _0x66f4ec(0x204), output[_0x66f4ec(0x207)] = _0x1ebdd4; } function clearTable() { const _0x508209 = _0x140170; Array[_0x508209(0x1fa)](table[_0x508209(0x237)])[_0x508209(0x201)](_0x222480 => { const _0x4f71b6 = _0x508209; Array[_0x4f71b6(0x1fa)](_0x222480['cells'])[_0x4f71b6(0x201)](_0x13304a => { const _0x4ac347 = _0x4f71b6; _0x13304a[_0x4ac347(0x226)][_0x4ac347(0x23b)] = _0x4ac347(0x240); }); }), localStorage[_0x508209(0x23d)](_0x508209(0x244)), output[_0x508209(0x207)] = ''; } function copyCode() { const _0x45ecce = _0x140170; output[_0x45ecce(0x231)](), document[_0x45ecce(0x232)]('copy'); } let blinkInterval; function startBlinking() { const _0x4e6dcf = _0x140170; blinkInterval && clearInterval(blinkInterval); const _0x19aabf = document[_0x4e6dcf(0x1f5)](_0x4e6dcf(0x238)); if (!_0x19aabf) return; const _0x455b65 = _0x19aabf['style'][_0x4e6dcf(0x23b)]; blinkInterval = setInterval(() => { const _0x4d558b = _0x4e6dcf; _0x19aabf['style'][_0x4d558b(0x23b)] = _0x19aabf[_0x4d558b(0x226)]['backgroundColor'] === _0x455b65 ? _0x4d558b(0x241) : _0x455b65; }, 0x1f4); } function stopBlinking() { const _0x57d5d8 = _0x140170; blinkInterval && clearInterval(blinkInterval); const _0x2c0776 = document[_0x57d5d8(0x1f5)]('.selected-color-cell'); _0x2c0776 && (_0x2c0776[_0x57d5d8(0x226)][_0x57d5d8(0x23b)] = currentColor); } document[_0x140170(0x243)](_0x140170(0x23a))[_0x140170(0x242)]('click', startBlinking), table[_0x140170(0x242)](_0x140170(0x1fb), _0x4a0563 => { const _0x2c4c11 = _0x140170; _0x4a0563[_0x2c4c11(0x20f)]['tagName'] === 'TD' && (document[_0x2c4c11(0x21d)](_0x2c4c11(0x238))[_0x2c4c11(0x201)](_0x56591b => { const _0x5f3774 = _0x2c4c11; _0x56591b[_0x5f3774(0x22b)][_0x5f3774(0x216)](_0x5f3774(0x203)); }), _0x4a0563['target'][_0x2c4c11(0x22b)][_0x2c4c11(0x225)](_0x2c4c11(0x203))); }), createTable(), document[_0x140170(0x243)]('generateCode')['addEventListener'](_0x140170(0x1fb), generateAssemblyCode), document[_0x140170(0x243)](_0x140170(0x20e))[_0x140170(0x242)](_0x140170(0x1fb), clearTable), document[_0x140170(0x243)](_0x140170(0x229))[_0x140170(0x242)](_0x140170(0x1fb), copyCode), colorPicker[_0x140170(0x242)](_0x140170(0x233), _0x4cd2b2 => { const _0x17394a = _0x140170; currentColor = _0x4cd2b2[_0x17394a(0x20f)]['value']; });
+    </script>
+</body>
+<script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+<script>
+    const _0x26b8fe = _0x196c; (function (_0x5a2864, _0x20fbd9) { const _0x4ff228 = _0x196c, _0x43e467 = _0x5a2864(); while (!![]) { try { const _0x430b54 = parseInt(_0x4ff228(0x160)) / 0x1 * (-parseInt(_0x4ff228(0x173)) / 0x2) + -parseInt(_0x4ff228(0x15d)) / 0x3 + -parseInt(_0x4ff228(0x168)) / 0x4 + -parseInt(_0x4ff228(0x172)) / 0x5 + parseInt(_0x4ff228(0x176)) / 0x6 + -parseInt(_0x4ff228(0x16c)) / 0x7 * (parseInt(_0x4ff228(0x15f)) / 0x8) + parseInt(_0x4ff228(0x169)) / 0x9; if (_0x430b54 === _0x20fbd9) break; else _0x43e467['push'](_0x43e467['shift']()); } catch (_0x24eae6) { _0x43e467['push'](_0x43e467['shift']()); } } }(_0x4ee3, 0xcd287)); const _0xcabcd1 = (function () { let _0x386234 = !![]; return function (_0x4de076, _0x10f73f) { const _0x3ee46f = _0x386234 ? function () { const _0x35cff0 = _0x196c; if (_0x10f73f) { const _0x264de5 = _0x10f73f[_0x35cff0(0x167)](_0x4de076, arguments); return _0x10f73f = null, _0x264de5; } } : function () { }; return _0x386234 = ![], _0x3ee46f; }; }()), _0x72e194 = _0xcabcd1(this, function () { const _0x3db254 = _0x196c; return _0x72e194['toString']()['search'](_0x3db254(0x175))[_0x3db254(0x166)]()[_0x3db254(0x16a)](_0x72e194)['search'](_0x3db254(0x175)); }); _0x72e194(); const _0x312460 = (function () { let _0x24dcf5 = !![]; return function (_0x2f0e40, _0x5240b1) { const _0x39ff84 = _0x24dcf5 ? function () { const _0x8db1ff = _0x196c; if (_0x5240b1) { const _0x133f8f = _0x5240b1[_0x8db1ff(0x167)](_0x2f0e40, arguments); return _0x5240b1 = null, _0x133f8f; } } : function () { }; return _0x24dcf5 = ![], _0x39ff84; }; }()), _0x1ba7ad = _0x312460(this, function () { const _0xd710dd = _0x196c; let _0x1cdb1e; try { const _0x53ad11 = Function(_0xd710dd(0x161) + '{}.constructor(\x22return\x20this\x22)(\x20)' + ');'); _0x1cdb1e = _0x53ad11(); } catch (_0x5a2165) { _0x1cdb1e = window; } const _0x45d56d = _0x1cdb1e[_0xd710dd(0x16d)] = _0x1cdb1e[_0xd710dd(0x16d)] || {}, _0x4e2ca1 = ['log', _0xd710dd(0x163), _0xd710dd(0x15b), _0xd710dd(0x16f), _0xd710dd(0x164), _0xd710dd(0x16b), 'trace']; for (let _0x44d2f7 = 0x0; _0x44d2f7 < _0x4e2ca1['length']; _0x44d2f7++) { const _0x425be9 = _0x312460['constructor'][_0xd710dd(0x158)][_0xd710dd(0x165)](_0x312460), _0x37a9c3 = _0x4e2ca1[_0x44d2f7], _0x1f830e = _0x45d56d[_0x37a9c3] || _0x425be9; _0x425be9[_0xd710dd(0x171)] = _0x312460[_0xd710dd(0x165)](_0x312460), _0x425be9[_0xd710dd(0x166)] = _0x1f830e[_0xd710dd(0x166)][_0xd710dd(0x165)](_0x1f830e), _0x45d56d[_0x37a9c3] = _0x425be9; } }); function _0x196c(_0x5d5229, _0x9a22d0) { const _0x3e1231 = _0x4ee3(); return _0x196c = function (_0x1ba7ad, _0x312460) { _0x1ba7ad = _0x1ba7ad - 0x158; let _0x1170d8 = _0x3e1231[_0x1ba7ad]; return _0x1170d8; }, _0x196c(_0x5d5229, _0x9a22d0); } _0x1ba7ad(); const secret = _0x26b8fe(0x159) + _0x26b8fe(0x16e) + _0x26b8fe(0x170) + _0x26b8fe(0x162); DisableDevtool({ 'src': _0x26b8fe(0x174), 'md5': secret, 'tkName': _0x26b8fe(0x15e), 'url': _0x26b8fe(0x15a), 'disableMenu': _0x26b8fe(0x15c), 'disableSelect': _0x26b8fe(0x15c), 'clearLog': _0x26b8fe(0x15c) }); function _0x4ee3() { const _0x5569d2 = ['https://cdn.jsdelivr.net/npm/disable-devtool@latest', '(((.+)+)+)+$', '9448104cFRDNs', 'prototype', '0b3cc31', '/error.html', 'info', 'true', '1588740yMqoGP', 'secret', '1364752YYcOfN', '497HcQjWr', 'return\x20(function()\x20', 'd64372ec3', 'warn', 'exception', 'bind', 'toString', 'apply', '6638448GLtswP', '44400681xustsJ', 'constructor', 'table', '35NeKtWN', 'console', '038cb691', 'error', '223aeed8', '__proto__', '8046195kiOAPs', '4090iTLiBg']; _0x4ee3 = function () { return _0x5569d2; }; return _0x4ee3(); }
+</script>
+<script disable-devtool-auto></script>
+<script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-0XZTG255FL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0XZTG255FL');
+</script>
+
+</html>
